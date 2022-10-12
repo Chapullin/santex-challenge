@@ -12,6 +12,7 @@ export const getProductList = gql`
         }
         variants {
           price
+          id
         }
       }
     }

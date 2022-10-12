@@ -1,5 +1,6 @@
 import { useQuery } from "@apollo/client";
 import {getProductList} from "../../graphql/queries"
+import { Product } from "../Product/Product";
 
 type itemsTypes = {
     id: string | number;
@@ -15,26 +16,21 @@ type assetType = {
 
 type variantsType = {
     price: string
+    id: number
 }
 
 export function ProductList() {
-  const { data, loading, error } = useQuery(getProductList);
+    const { data, loading, error } = useQuery(getProductList);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error, something went wrong :(</p>;
 
-  return (<>
-      {data.products.items.map(({id, name, description, featuredAsset, variants}: itemsTypes) => (
-              <div key={id}>
-                  <h3>{name}</h3>
-                  <p>AR$ {variants[0].price}</p>
-                  <p>{description}</p>
-                  <img src={featuredAsset.source} alt=""/>
-                  <button>
-                      Add item to cart
-                  </button>
-              </div>
-          )
-      )}
-  </>);
+    // TODO put a spinner in the loading
+    if (loading) return <p>Loading... Please wait</p>;
+    if (error) return <p>Error, something went wrong :(</p>;
+
+
+    return <>
+        {data.products.items.map((itemProps: itemsTypes) =>
+            <Product key={itemProps.id} {...itemProps}/>
+        )}
+  </>;
 }
