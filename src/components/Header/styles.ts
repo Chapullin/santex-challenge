@@ -13,4 +13,5 @@ export const Price = styled.div`
     font-weight: bold;
     float: right;
     margin-right: 30px;
+    font-size: 35px
 `;
