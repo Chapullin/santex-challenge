@@ -7,6 +7,13 @@ export const getProductList = gql`
         id
         name
         description
+        featuredAsset {
+          source
+        }
+        variants {
+          price
+          id
+        }
       }
     }
   }
