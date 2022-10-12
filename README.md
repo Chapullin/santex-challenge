@@ -4,6 +4,10 @@ Quick challenge to help candidates to join RBI Team to catch up with currently u
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Live Demo
+Go to [santex-challenge](https://santex-challenge-khaki.vercel.app/) (hosted by Vercel) for a quick live check. 
+To reset the subtotal you can paste `localStorage.subTotal=0` in the browser console (open with `cmd + shift + c` in chrome). 
+
 ## Goals
 
 - Get familiar with Styled Components as styling strategy
