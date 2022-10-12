@@ -4,19 +4,19 @@ import { Product } from "../Product/Product";
 import { ProductListStyle, Grid } from "./styles";
 
 type itemsTypes = {
-    id: string | number;
-    description: string;
-    name: string;
-    featuredAsset: assetType
+    id: string | number,
+    description: string,
+    name: string,
+    featuredAsset: assetType,
     variants: variantsType[]
 };
 
 type assetType = {
-    source: string;
+    source: string,
 };
 
 type variantsType = {
-    price: string
+    price: string,
     id: number
 }
 

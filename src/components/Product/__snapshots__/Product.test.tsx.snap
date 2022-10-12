@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product should match snapshot Header 1`] = `
+<div
+  class="sc-bcXHqe dyuvYz"
+>
+  <div>
+    <h2>
+      name mock
+    </h2>
+    <img
+      alt="name mock"
+      height="auto"
+      src="imgUrl"
+      width="100%"
+    />
+    <p>
+      description mock
+    </p>
+    <button
+      class="sc-dkrFOg ieELWA"
+    >
+      ADD ITEM
+    </button>
+    <p
+      class="sc-gswNZR lbEmXL"
+    >
+      AR$ 
+      1111
+    </p>
+  </div>
+</div>
+`;

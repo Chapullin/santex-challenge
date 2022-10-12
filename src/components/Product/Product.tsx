@@ -5,15 +5,15 @@ import { Item, Price, Button } from "./styles";
 
 // TODO extract into a file with cross types itemsTypes, assetType, variantsType
 type itemsTypes = {
-    id: string | number;
-    description: string;
-    name: string;
-    featuredAsset: assetType
-    variants: variantsType[]
+    id: string | number,
+    description: string,
+    name: string,
+    featuredAsset: assetType,
+    variants: variantsType[],
 };
 
 type assetType = {
-    source: string;
+    source: string,
 };
 
 type variantsType = {

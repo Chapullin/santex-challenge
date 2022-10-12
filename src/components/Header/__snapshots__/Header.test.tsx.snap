@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match snapshot Header 1`] = `
+<header
+  class="sc-bcXHqe fJphvG"
+  style="background: red;"
+>
+  <img
+    alt="logo"
+    src="https://santex.wpengine.com/wp-content/uploads/2019/02/logo-santex@3x.png"
+  />
+  <div
+    class="sc-gswNZR hmTBPx"
+  >
+    AR$ 
+    0
+  </div>
+</header>
+`;
