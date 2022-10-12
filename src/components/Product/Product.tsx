@@ -1,6 +1,7 @@
 import { useMutation } from "@apollo/client";
 import { useStateWithStorage } from "../../hooks/useStateWithStorage";
 import {mutationAddItemToOrder} from "../../graphql/mutations";
+import { Item, Price, Button } from "./styles";
 
 // TODO extract into a file with cross types itemsTypes, assetType, variantsType
 type itemsTypes = {
@@ -44,22 +45,33 @@ export const Product = (itemProps: itemsTypes) => {
         },
     });
 
-  return (<>
-      <div key={id}>
-          <h3>{name}</h3>
-          <p>AR$ {variants[0].price}</p>
-          <p>{description}</p>
-          <button
-              onClick={()=>addItemToOrder({
-                  variables: {
-                      productVariantId: variants[0].id,
-                      quantity: 1,
-                  },
-              })}
-          >
-              Add item to cart
-          </button>
-          <img src={featuredAsset.source} alt=""/>
-      </div>
-  </>);
+  return (
+      <Item>
+          <div key={id}>
+              <h2>{name}</h2>
+
+              <img src={featuredAsset.source}
+                   alt={name}
+                   width="100%"
+                   height="auto"
+              />
+              <p>{description}</p>
+              <Button
+                  onClick={()=>addItemToOrder({
+                      variables: {
+                          productVariantId: variants[0].id,
+                          quantity: 1,
+                      },
+                  })}
+              >
+                  {
+                      // TODO this button needs to show a feedback onClick
+                      //  or the subTotal at header should flash on update.
+                  }
+                  ADD ITEM
+              </Button>
+              <Price>AR$ {variants[0].price}</Price>
+          </div>
+      </Item>
+  );
 }
