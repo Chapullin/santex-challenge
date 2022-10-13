@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Live Demo
 Go to [santex-challenge](https://santex-challenge-khaki.vercel.app/) (hosted by Vercel) for a quick live check. 
-To reset the subtotal you can paste `localStorage.subTotal=0` in the browser console (open with `cmd + shift + c` in chrome). 
+To reset the subtotal you can paste `localStorage.clear()` in the browser console (open with `cmd + shift + c` in chrome). 
 
 ## Goals
 
