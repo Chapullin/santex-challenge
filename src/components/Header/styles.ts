@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 
 export const FloatNav = styled.header`
     padding: 15px;
@@ -8,10 +8,25 @@ export const FloatNav = styled.header`
     top: 0;
 `;
 
-export const Price = styled.div`
+const blinkEffect = keyframes`
+    50% {
+        opacity: 0;
+    }
+`;
+ type priceTypes = {
+     blink: boolean
+}
+const animation = css`
+  animation: ${blinkEffect}  0.5s linear 4;
+`;
+
+export const Price = styled.div<priceTypes>`
     color: white;
     font-weight: bold;
     float: right;
     margin-right: 30px;
-    font-size: 35px
+    font-size: 35px;
+    ${({blink}) => (blink && css`
+        ${animation}
+    `)}
 `;

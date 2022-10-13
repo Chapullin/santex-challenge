@@ -13,18 +13,16 @@ const subTotalContext = createContext({
 
 export const Provider = ({ children }: { children: ReactNode }) => {
     const [subTotal, setSubTotal] = useState(0);
-    console.log('\x1b[42m START provider === \x1b[0m');
 
-    // set initialTotal localStorage
+    // set initial subTotal localStorage
     useEffect(() => {
         const initialSubTotal = JSON.parse(localStorage.getItem('subTotal') || '0' );
         setSubTotal(+initialSubTotal);
     }, []);
 
-    // update Total on every change
+    // update subTotal on every change
     useEffect(() => {
         localStorage.setItem("subTotal", JSON.stringify(subTotal));
-        console.log('localStorage', localStorage);
     }, [subTotal]);
 
     return (
